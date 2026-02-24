@@ -1,0 +1,482 @@
+{
+  "info": {
+    "_postman_id": "69ed0e07-ea4e-4a65-95ac-79e467ecd901",
+    "name": "blogs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51125287"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Asmaa Mostafa\",\r\n    \"email\": \"asmaa@example.com\",\r\n    \"password\": \"password123\"\r\n   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"email\": \"asmaa@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "get user by id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Asmaa\",\r\n    \"email\": \"asmaa@example.com\",\r\n    \"password\": \"password123\",\r\n    \"age\":22,\r\n    \"gender\": \"Female\"\r\n\r\n    \r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user by email",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Asmaa\",\r\n    \"email\": \"asmaa@example.com\",\r\n    \"password\": \"password123\",\r\n    \"age\":22,\r\n    \"gender\": \"Female\"\r\n\r\n    \r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/by-email?email=asmaa2@example.com",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "by-email"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "asmaa2@example.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update profile",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"name\": \"Asmaa2\",\r\n   \"email\": \"asmaa2@example.com\",\r\n   \"password\": \"password123\",\r\n   \"role\": \"admin\"\r\n \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"force\":true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "restore profile",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/1/restore",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "1",
+                "restore"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "item": [
+        {
+          "name": "create blog",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"userId\": 1,\r\n    \"title\":\"My second Blog Post\",\r\n    \"content\": \"This is the content of my first blog post. I am excited to share my thoughts and experiences with the world.\"\r\n   \r\n   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get blogs",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\":1\r\n   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all posts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"userId\": 1,\r\n    \"title\":\"My First Blog Post\",\r\n    \"content\": \"This is the content of my first blog post. I am excited to share my thoughts and experiences with the world.\"\r\n   \r\n   \r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "posts& count of comments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"userId\": 1,\r\n    \"title\":\"My First Blog Post\",\r\n    \"content\": \"This is the content of my first blog post. I am excited to share my thoughts and experiences with the world.\"\r\n   \r\n   \r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/comment-count",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts",
+                "comment-count"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "item": [
+        {
+          "name": "create comments",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  \r\n {\r\n    \"content\":\"comment 2\",\r\n    \"postId\": 2,\r\n    \"userId\": 1\r\n}\r\n\r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update comment",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\":1,\r\n    \"content\":\"updatedcomment\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find or create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments/find-or-create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "find-or-create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search and count",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments/search?word=this",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "word",
+                  "value": "this"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get recent comments to a post",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments/newest/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "newest",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get comment details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/comments/details/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "details",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
